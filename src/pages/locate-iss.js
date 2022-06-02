@@ -6,6 +6,7 @@ import {
   Geography,
   Marker
 } from "react-simple-maps";
+import PageContainer from "../components/page-container";
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
@@ -27,6 +28,7 @@ export default function LocateISS() {
   useInterval(updateISSPosition, 5000);
 
   return (
+    <PageContainer secure={true}>
     <div className="iss-map-container">
       <ComposableMap
         projection="geoOrthographic"
@@ -56,6 +58,7 @@ export default function LocateISS() {
           </Marker>
       </ComposableMap>
     </div>
+    </PageContainer>
   );
 }
 

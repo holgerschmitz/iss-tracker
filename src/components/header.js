@@ -1,9 +1,20 @@
 import * as React from "react"
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import { useOktaAuth } from "@okta/okta-react"
 
-const Header = ({ siteTitle }) => (
-  <header
+const Header = ({ siteTitle }) => {
+  const { oktaAuth } = useOktaAuth();
+
+  const handleLogout = () => oktaAuth.signOut({
+    postLogoutRedirectUri: "http://localhost:8000/"
+  });
+
+  const [authenticated, setAuthenticated] = React.useState(false);
+
+  oktaAuth.isAuthenticated().then((auth) => setAuthenticated(auth));
+
+  return <header
     style={{
       background: `rebeccapurple`,
       marginBottom: `1.45rem`,
@@ -27,9 +38,11 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
+      { authenticated ? <button onClick={handleLogout}>Logout</button> : '' }
+      
     </div>
-  </header>
-)
+  </header>;
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Gatsby Secure ISS Locator`,
+    description: `Locating the International Space Station in Gatsby, secured by Okta`,
+    author: `Holger Schmitz`,
+    siteUrl: `http://localhost`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

@@ -2,11 +2,11 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
-import Layout from "../components/layout"
 import Seo from "../components/seo"
+import PageContainer from "../components/page-container"
 
 const IndexPage = () => (
-  <Layout>
+  <PageContainer>
     <Seo title="Home" />
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
@@ -22,7 +22,7 @@ const IndexPage = () => (
     <p>
       <Link to="/locate-iss/">See the ISS position</Link>
     </p>
-  </Layout>
+  </PageContainer>
 )
 
 export default IndexPage
