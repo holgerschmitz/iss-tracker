@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { OktaAuth } from '@okta/okta-auth-js';
+import { OktaAuth, oidc } from '@okta/okta-auth-js';
 
 const oktaAuth = new OktaAuth({
   issuer: 'https://dev-20943582.okta.com/oauth2/default',
